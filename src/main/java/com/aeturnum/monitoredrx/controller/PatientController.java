@@ -31,7 +31,7 @@ public class PatientController {
 	public String serviceCheck() {
 		return "This is service check message from monitoredrx";
 	}
-	@CrossOrigin
+
 	@PostMapping("/addPatient")
 	public ResponseEntity<?>  addPatient(@RequestBody Patient patient) {
 		if(patientService.savePatient(patient)) {
@@ -39,7 +39,7 @@ public class PatientController {
 		}
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
-	@CrossOrigin
+
 	@PutMapping("/updatePatient")
 	public ResponseEntity<?> updatePatient(@RequestBody Patient patient) {
 		if(patientService.updatePatient(patient)) {
@@ -47,7 +47,7 @@ public class PatientController {
 		}
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
-	@CrossOrigin
+
 	@DeleteMapping("/deletePatient/{id}")
 	public ResponseEntity<?> addPatient(@PathVariable Long id) {
         if(!patientService.deletePatient(id)) {
@@ -56,7 +56,7 @@ public class PatientController {
         return new ResponseEntity<>(HttpStatus.OK);	
 
 	}
-	@CrossOrigin
+
 	@GetMapping("/allPatients")
 	public List<Patient> getAllPatients() {
 		return patientService.getAllPatientDetails();
