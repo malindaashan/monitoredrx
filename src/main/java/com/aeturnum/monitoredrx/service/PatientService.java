@@ -2,6 +2,8 @@ package com.aeturnum.monitoredrx.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import com.aeturnum.monitoredrx.repository.PatientRepository;
 
 @Service
 public class PatientService {
+	static final Logger logger= LoggerFactory.getLogger(PatientService.class);
 	
 	@Autowired
 	PatientRepository patientRepository;
@@ -23,7 +26,7 @@ public class PatientService {
 			patientRepository.deleteById(id);
 			return true;
 		}catch(Exception e) {
-			e.printStackTrace();
+			logger.error("Error while deletePatient",e);
 			return false;
 		}
 	}
@@ -33,7 +36,7 @@ public class PatientService {
 			patientRepository.save(patient);
 			return true;
 		}catch(Exception e) {
-			e.printStackTrace();
+			logger.error("Error while savePatient",e);
 			return false;
 		}
 	}
@@ -42,7 +45,7 @@ public class PatientService {
 			patientRepository.save(patient);
 			return true;
 		}catch(Exception e) {
-			e.printStackTrace();
+			logger.error("Error while updatePatient",e);
 			return false;
 		}
 	}

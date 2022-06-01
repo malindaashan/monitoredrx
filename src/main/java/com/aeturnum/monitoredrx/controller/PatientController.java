@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aeturnum.monitoredrx.entity.Patient;
 import com.aeturnum.monitoredrx.service.PatientService;
 
 @RestController
 public class PatientController {
+	static final Logger logger= LoggerFactory.getLogger(PatientController.class);
 	
 	@Autowired
 	PatientService patientService;
