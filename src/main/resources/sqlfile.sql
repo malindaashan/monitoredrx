@@ -12,4 +12,21 @@ create table patient(
 	zipcode INT,
 	phonenumber varchar(50),
 	email varchar(100)
+	projectId varchar(100);
+);
+
+create table rx.project(
+	id serial PRIMARY KEY,
+	projectName varchar(255),
+	userId INT
+);
+
+insert into rx.project values (1,'project phenomena',1);
+insert into rx.project values (2,'project diabetes',1);
+insert into rx.project values (3,'project Therapy',2);
+
+create table users(
+	id serial PRIMARY KEY,
+	userId varchar(255),
+	projectId INT
 );

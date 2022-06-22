@@ -21,6 +21,11 @@ public class PatientService {
 		return patientRepository.findAll();
 		
 	}
+	
+	public List<Patient> getPatientFromProject(Integer projectId){
+		return patientRepository.findByProjectId(projectId);
+		
+	}
 	public boolean deletePatient(Long id){
 		try {
 			patientRepository.deleteById(id);

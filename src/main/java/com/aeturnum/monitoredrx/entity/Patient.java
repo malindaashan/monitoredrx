@@ -29,6 +29,8 @@ public class Patient {
 	private String phonenumber;
 	
 	private String email;
+	
+	private Integer projectId;
 
 	public Long getId() {
 		return id;
@@ -100,6 +102,14 @@ public class Patient {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Integer getProjectId() {
+		return projectId;
+	}
+
+	public void setProjectId(Integer projectId) {
+		this.projectId = projectId;
 	}
 	
 	

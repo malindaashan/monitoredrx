@@ -56,7 +56,14 @@ public class PatientController {
         return new ResponseEntity<>(HttpStatus.OK);	
 
 	}
+	@CrossOrigin
+	@GetMapping("/getPatientByProject/{projectId}")
+	public List<Patient> getFromProject(@PathVariable Integer projectId) {
+		return patientService.getPatientFromProject(projectId);
 
+	}
+	
+	@CrossOrigin
 	@GetMapping("/allPatients")
 	public List<Patient> getAllPatients() {
 		return patientService.getAllPatientDetails();
